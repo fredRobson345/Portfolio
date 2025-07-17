@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/style.css"> 
+  <title>Study AI - New Mindmap</title>
+  <style>
+    .upload-body {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .upload-container {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .upload-left textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .upload-left button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .upload-left button:hover {
+      background-color: #0056b3;
+    }
+
+    .upload-left,
+    .upload-right {
+      width: 100%;
+    }
+
+    .upload-right pre {
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
+</head>
+<body>
+
+<ul class="nav-list">
+  <li><a href="../index.html">Home</a></li>
+  <li><a class="active" href="index.html">New</a></li>
+  <li><a href="../save/index.html">Save</a></li>
+  <li><a href="../planner/index.html">Planner</a></li>
+  <li><a href="../account/index.html">Account</a></li>
+</ul>
+
+<div class="upload-body">
+  <div class="upload-container">
+    <!-- Input Section -->
+    <div class="upload-left">
+      <h2>Enter Text</h2>
+      <textarea id="userInput" placeholder="Type something here..."></textarea>
+      <button onclick="generateJSON()">Submit</button>
+    </div>
+
+    <!-- Output Section -->
+    <div class="upload-right">
+      <h2>Mindmap Output</h2>
+      <pre id="jsonOutput">{"message": "Your JSON output will appear here."}</pre>
+    </div>
+  </div>
+</div>
+
+<script>
+  function generateJSON() {
+    const input = document.getElementById("userInput").value;
+    const output = {
+      input: input
+    };
+    document.getElementById("jsonOutput").textContent = JSON.stringify(output, null, 2);
+  }
+</script>
+
+</body>
+</html>

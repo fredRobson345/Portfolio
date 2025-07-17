@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../style/style.css"/>
+  <title>Study AI - Planner</title>
+  <style>
+    .planner-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .planner-container label {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .planner-container input,
+    .planner-container select,
+    .planner-container button {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    #outputBox {
+      white-space: pre-wrap;
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<ul class="nav-list">
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../new/index.html">New</a></li>
+  <li><a href="../save/index.html">Save</a></li>
+  <li><a class="active" href="index.html">Planner</a></li>
+  <li><a href="../account/index.html">Account</a></li>
+</ul>
+
+<div class="planner-container">
+  <div>
+    <label for="studyDate">Select Date:</label>
+    <input type="date" id="studyDate">
+  </div>
+
+  <div>
+    <label for="hours">Study Hours:</label>
+    <select id="hours">
+      <option value="">-- Select Hours --</option>
+      <option value="1">1 Hour</option>
+      <option value="2">2 Hours</option>
+      <option value="3">3 Hours</option>
+      <option value="4">4 Hours</option>
+      <option value="5">5 Hours</option>
+      <option value="6">6 Hours</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="modules">Modules:</label>
+    <select id="modules">
+      <option value="">-- Select Modules --</option>
+      <option value="1">1 Module</option>
+      <option value="2">2 Modules</option>
+      <option value="3">3 Modules</option>
+      <option value="4">4 Modules</option>
+      <option value="5">5 Modules</option>
+    </select>
+  </div>
+
+  <button onclick="generateJSON()">Generate Plan</button>
+
+  <div id="outputBox">Your generated plan will appear here...</div>
+</div>
+
+<script>
+function generateJSON() {
+  const date = document.getElementById('studyDate').value;
+  const hours = document.getElementById('hours').value;
+  const modules = document.getElementById('modules').value;
+
+  if (!date || !hours || !modules) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  const plan = {
+    date: date,
+    study_hours: parseInt(hours),
+    number_of_modules: parseInt(modules)
+  };
+
+  document.getElementById('outputBox').textContent = JSON.stringify(plan, null, 2);
+}
+</script>
+
+</body>
+</html>
