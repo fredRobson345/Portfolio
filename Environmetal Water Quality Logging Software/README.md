@@ -1,5 +1,7 @@
 This is a java software that will take inputs in the terminal for measurements and store them in a single CSV file.
-Below is the scenario and details for this program. To run this program, Server.java must be run first and then run Client.java concurrently.
+Below is the scenario and details for this program. 
+
+*To run this program, Server.java must be run first and then run Client.java concurrently.*
 
 Scenario
 
