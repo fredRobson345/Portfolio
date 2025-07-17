@@ -3,6 +3,8 @@ Below is the scenario and details for this program.
 
 *To run this program, Server.java must be run first and then run Client.java concurrently.*
 
+
+
 Scenario
 
 As part of a research project studying environmental water pollution, a system is required to allow multiple researchers to record water quality readings in the field and submit these remotely to a central database for later analysis.
