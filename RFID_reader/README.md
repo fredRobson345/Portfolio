@@ -1,0 +1,1 @@
+This RFID reader was created for an Arduino project. It would display passwords to a LCD-display and cycle through all the passwords stored in the program. These would only be displayed if the correct RFID was detected. A LED would also change from red to green if the system was unlocked.
